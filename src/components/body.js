@@ -1,10 +1,16 @@
 import React from 'react';
-import Container from './components/container'
+import Container from './container'
+import Header from './header'
+
+
+
+
 
 
 function Body() {
   return (
     <div className="body">
+      <Header />
       <Container />
     </div>
   );
