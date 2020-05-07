@@ -12,7 +12,7 @@
       return (
         <div className="container">
           {/*search prompt*/} 
-          {/*<Search handleInputChange={handleInputChange} results={search}/>*/}
+          <Search handleInputChange={handleInputChange} results={search}/>
           {/*search prompt*/}
           <Employee />
         </div>

@@ -26,6 +26,11 @@ function Search() {
         }
         //employeeArr.forEach(element => {
             setName(employeeArr.data.results[0]);
+            setImg()
+            setPhone()
+            setEmail()
+            setBirthDay()
+            
         })
       //.catch(err => setError(err));
   }, [search]);
@@ -40,7 +45,7 @@ function Search() {
 
           handleInputChange={handleInputChange}
           results={search}
-    </div>
+        </div>
       );
     
 }
