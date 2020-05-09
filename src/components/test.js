@@ -1,64 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import API from "../utils/api";
-
-function Search() {
-  // Declare a new state variable, which we'll call "count"
-  const [search, setSearch] = useState("");
-  const [img, setImg] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthday, setBirthDay] = useState("");
-
-  //componentDidUpdate in HOOKS
-  useEffect(() => {
-    if (!search) {
-      return;
-    }
-
-    API.getEmployees(search)
-      /*getEmployees: function() {
-        return axios.get("https://randomuser.me/api/?results=100");
-      }*/    
-    .then(employeeArr => {
-        if (employeeArr.data.results.length === 0) {
-          throw new Error("No results found.");
-        }
-        if (employeeArr.data.results.status === "error") {
-          throw new Error(employeeArr.data.message);
-        }
-        //employeeArr.forEach(element => {
-            setName(employeeArr.data.results[0]);
-            setImg()
-            setPhone()
-            setEmail()
-            setBirthDay()
-            
-        })
-      //.catch(err => setError(err));
-  }, [search]);
-
-  const handleInputChange = event => {
-    setSearch(event.target.value);
-  };
-
-
-    return (
-        <div>
-
-          handleInputChange={handleInputChange}
-          results={search}
-        </div>
-      );
+    import React from 'react';
     
-}
-export default Search;
+    
+    function Test(props) {
+      return (
+        <div>
+          <a>name:{props.Fname}</a>
+          <a>last:{props.Lname}</a>
+        </div>
+      )
+    }
+    
+    export default Test;
+    
 
 
-
-  
-////////////////
-//EMPLOYEE[0]
+    //EMPLOYEE[0]
 /* 
 results": [
     {

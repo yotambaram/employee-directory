@@ -1,24 +1,42 @@
     import React from 'react';
     
+/*
+    res.data.results.map((e, i) => ({
+      firstName: e.name.first,
+      lastName: e.name.last,
+      picture: e.picture.large,
+      email: e.email,
+      phone: e.phone,
+      dob: e.age,
+      key: i
+    }))
+*/
+const arr = [{firstName: "yotam", lastName: "Baram"},{firstName: "John", lastName: "Smith"}]
+
+
     
-    function EmployeeComp(props) {
-      return (
-        <ul className="list-group search-results">
-          <li className="list-group-item">
-            <a>{props.title}</a> //pic
-            <a>{props.name}</a>
-            <a>{props.phone}</a>
-            <a>{props.email}</a>
-            <a>{props.birthdar}</a>
-           
-          </li>
-        </ul>
+    function Employee(props) {
+      console.log("EMPLOEE COMPONENT", props.employeeState)
+      let firstNamecard = ""
+      let lastNamecard = ""
+      props.employeeState.map(emp=>{
+        console.log("MAP" ,emp.name.first)
+        
+      })
+       
+        return (
+        // <a>{firstNamecard} + {lastNamecard}</a>
+        <a>ddd</a>
+
       );
     }
     
-    export default EmployeeComp;
+    export default Employee;
     
 
+ 
+    
+    
 
     //EMPLOYEE[0]
 /* 
