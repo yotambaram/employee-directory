@@ -1,34 +1,43 @@
     import React from 'react';
+    import Card from "./card";
     
-/*
-    res.data.results.map((e, i) => ({
-      firstName: e.name.first,
-      lastName: e.name.last,
-      picture: e.picture.large,
-      email: e.email,
-      phone: e.phone,
-      dob: e.age,
-      key: i
-    }))
-*/
-const arr = [{firstName: "yotam", lastName: "Baram"},{firstName: "John", lastName: "Smith"}]
+
+
+function ResultList(props) {
+  return (
+    <ul className="list-group">
+      {props.results.map(result => (
+        <li className="list-group-item" key={result.id}>
+          <img alt={result.title} className="img-fluid" src={result.images.original.url} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+
 
 
     
     function Employee(props) {
       console.log("EMPLOEE COMPONENT", props.employeeState)
-      let firstNamecard = ""
-      let lastNamecard = ""
-      props.employeeState.map(emp=>{
-        console.log("MAP" ,emp.name.first)
-        
-      })
-       
         return (
-        // <a>{firstNamecard} + {lastNamecard}</a>
-        <a>ddd</a>
+          <ul>
+             {props.employeeState.map(emp=> (
+                <li>
+                    <a>{emp.name.first} {emp.name.last} {emp.phone} </a>
+                    
+                 </li>
 
-      );
+               
+              ))}
+      
+            </ul>
+        );
+
+        
+     
+      
     }
     
     export default Employee;
