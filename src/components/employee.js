@@ -1,7 +1,7 @@
     import React from 'react';
-    import Card from "./card";
+    //import Card from "./card";
     
-
+// key {emp.login.uuid}
     
     function Employee(props) {
       console.log("EMPLOEE COMPONENT", props.employeeState)
@@ -9,8 +9,15 @@
           <ul>
              {props.employeeState.map(emp=> (
                 <li>
-                    <a>{emp.name.first} {emp.name.last} {emp.phone} </a>
-                    
+                  <div>
+                     <a><img src={emp.picture.thumbnail} alt={emp.name.first}/><br/>
+                     <a>{emp.name.first}</a>
+                     <a>{emp.name.last}</a>
+                     <a>{emp.phone}</a><br/>
+                     <a>{emp.email}</a><br/>
+                     <a>{emp.dob.date}</a><br/><br/>
+                     </a>
+                  </div>    
                  </li>
 
                
@@ -19,8 +26,6 @@
             </ul>
         );
 
-        
-     
       
     }
     

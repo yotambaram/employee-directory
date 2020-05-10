@@ -2,11 +2,11 @@ import React from 'react';
 
 
 function Card(props) {
-    console.log("CARD", props)
+    console.log("CARD", props.fistName)
     
       return (
           <li>
-              <a>TEST {props.firstNamea}</a>
+              <a>TEST {propsz.firstName}</a>
           </li>
       );
 
