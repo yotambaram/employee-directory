@@ -1,29 +1,25 @@
     import React from 'react';
-    //import Card from "./card";
+    import "./employee.css"
     
 // key {emp.login.uuid}
     
     function Employee(props) {
       console.log("EMPLOEE COMPONENT", props.employeeState)
         return (
-          <ul>
+          <li className="employee-card" >
              {props.employeeState.map(emp=> (
-                <li>
-                  <div>
-                     <a><img src={emp.picture.thumbnail} alt={emp.name.first}/><br/>
-                     <a>{emp.name.first}</a>
-                     <a>{emp.name.last}</a>
-                     <a>{emp.phone}</a><br/>
-                     <a>{emp.email}</a><br/>
-                     <a>{emp.dob.date}</a><br/><br/>
-                     </a>
+                
+                  <div className="row">
+                     <a className="col-1 col-style"><img src={emp.picture.thumbnail} alt={emp.name.first}/></a>
+                     <a className="col-2 col-style">{emp.name.first}</a>
+                     <a className="col-2 col-style">{emp.name.last}</a>
+                     <a className="col-2 col-style">{emp.phone}</a>
+                     <a className="col-4 col-style">{emp.email}</a>
+                     <a className="col-1 col-style">{emp.dob.age}</a>  
                   </div>    
-                 </li>
-
-               
               ))}
-      
-            </ul>
+
+            </li>
         );
 
       

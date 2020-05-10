@@ -2,15 +2,16 @@
 import React, { useState, useEffect } from "react";
 import Employee from "./employee";
 import API from "../utils/api"
+import "./container.css"
 //import Search from './search'
 
 
 
 
 function Container() {
-  // permanent / defulte state
+  //permanent/defulte state
   const [permEmployeeState, setPermEmployeeState] = useState([])
-  // state to present
+  //state to desplay
   const [employeeState, setEmployeeState] = useState([])
   //search/filter state
   const [searchState, setSearchState] = useState("");
@@ -23,10 +24,11 @@ function Container() {
   useEffect(() => {
     API.getEmployees().then(res => {
       //console.log("FROM API" ,res.data.results)
-      // state for working on
-      setEmployeeState(res.data.results)
-      // permanent state
+      // set permanent state
       setPermEmployeeState(res.data.results)
+      // set state to work with
+      setEmployeeState(res.data.results)
+      
 
     }).catch(err => {
       console.log(err);
@@ -72,17 +74,25 @@ function Container() {
 
 
     return (
-      <div>
+      <div className = "container">
         <div>
           <form>
             <input onChange={hundleInput} type="text" />
           </form>
         </div>
-
         <div><button onClick={hundleSort}>sort</button></div>
         <a>content</a>
-        <Employee employeeState={employeeState} />
-
+        <ul className="employee-card" >
+          <div className="row headline">
+              <a className="col-1"></a>
+              <a className="col-2" onClick={hundleSort} href="#"> First Name</a>
+              <a className="col-2">Last Name</a>
+              <a className="col-2">Phone</a>
+              <a className="col-4">Email</a>
+              <a className="col-1">Age</a>
+          </div>
+          <Employee employeeState={employeeState} />
+        </ul>    
       </div>
 
 
