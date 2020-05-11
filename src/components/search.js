@@ -11,7 +11,7 @@ const hundleInput = event=>{
 
 
 
-function Search() {
+function Search(props) {
     return (
       <div>
         <form>

@@ -18,8 +18,6 @@ function Container() {
   //sort state
   const [sortedState, setSortedState] = useState();
 
-
-
   //GET THE LIST FROM API
   useEffect(() => {
     API.getEmployees().then(res => {
@@ -48,19 +46,33 @@ function Container() {
     setEmployeeState(filteredEmployee);
   },[searchState])
 
-
+  /*
   //UPDATE SORTED LIST
   useEffect(() => {
     //create new list to work on
     const NewEmployeeState = [...permEmployeeState];
-    //sort  (if  < || >)
     //change the arry 
     NewEmployeeState.sort((a, b) => a.name.first > b.name.first ? 1 : -1)
     setEmployeeState(NewEmployeeState);
   }, [sortedState])
+*/
+    //UPDATE SORTED LIST
+    useEffect(() => {
+      //create new list to work on
+      const NewEmployeeState = [...employeeState];
+      console.log("WORKING")
+      //change the arry
+      if(NewEmployeeState.length > 0 ){
 
-
-
+        if(NewEmployeeState[0].name.first > NewEmployeeState[NewEmployeeState.length-1].name.first) {
+          NewEmployeeState.sort((a, b) => a.name.first > b.name.first ? 1 : -1)
+        } else {
+          NewEmployeeState.sort((a, b) => a.name.first < b.name.first ? 1 : -1)
+        }
+        setEmployeeState(NewEmployeeState);
+      }
+      }, [sortedState])
+      
 
   //INPUT HUNDEL
   const hundleInput = event => {
@@ -69,7 +81,7 @@ function Container() {
 
   //SORT HUNDEL
   const hundleSort = () => {
-    setSortedState(employeeState);
+    setSortedState(...employeeState);
   }
 
 
