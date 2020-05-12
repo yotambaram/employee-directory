@@ -1,9 +1,7 @@
 import React from "react";
 import Container from './container'
 import Header from './header'
-//import API from "../utils/api"
-
-
+import "./body.css"
 
 
 function Body() {

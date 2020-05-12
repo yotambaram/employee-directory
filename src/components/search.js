@@ -5,9 +5,6 @@ import React from 'react';
 
 
 
-const hundleInput = event=>{
-  setSearchState(event.target.value);
-  }
 
 
 
@@ -15,7 +12,7 @@ function Search(props) {
     return (
       <div>
         <form>
-          <input onChange={hundleInput} type="text"/>
+          <input onChange={props.hundleInput} type="text"/>
         </form>
       </div>
     );
