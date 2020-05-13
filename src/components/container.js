@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Employee from "./employee";
 import API from "../utils/api"
 import "./container.css"
-import Search from './search'
+
 
 
 function Container() {
@@ -39,7 +39,7 @@ function Container() {
       }
     })
     setEmployeeState(filteredEmployee);
-  },[searchState])
+  },[searchState, permEmployeeState])
 
     //UPDATE SORTED LIST
     useEffect(() => {
@@ -54,6 +54,7 @@ function Container() {
         }
         setEmployeeState(NewEmployeeState);
       }
+      // eslint-disable-next-line
       }, [sortedState])
       
   //INPUT HUNDEL
@@ -70,10 +71,9 @@ function Container() {
           <div className="row filter-holder">
             <div className="col-12">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-              <a className="navbar-brand">Find</a>
-              <a className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </a>
+              <span className="navbar-brand">Find</span>
+              <span className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span></span>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <form className="form-inline my-2 my-lg-0">
                   <input onChange={hundleInput} className="form-control mr-sm-2" type="search" placeholder="Filter" aria-label="Search" />
@@ -81,23 +81,18 @@ function Container() {
               </div>
             </nav>
           </div>
-        </div>
-
-
-
-
-       
+        </div>       
         <div id="employee-holder" className="row">
           <ul className="employee-card" >
             <div className="row headline">
-                <a className="col-1"></a>
-                <a className="col-2 sort-text" onClick={hundleSort}> First Name</a>
-                <a className="col-2">Last Name</a>
-                <a className="col-2">Phone</a>
-                <a className="col-3">Email</a>
-                <a className="col-2" onClick={hundleSort}>Age</a>
+                <span className="col-1"></span>
+                <span className="col-2 sort-text" onClick={hundleSort}> First Name</span>
+                <span className="col-2">Last Name</span>
+                <span className="col-2">Phone</span>
+                <span className="col-3">Email</span>
+                <span className="col-2" onClick={hundleSort}>Age</span>
             </div>
-            <Employee employeeState={employeeState} />
+            {employeeState.length > 0 ? <Employee employeeState={employeeState} /> : null}
           </ul>    
         </div>
 
