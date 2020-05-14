@@ -30,4 +30,4 @@
 
 
 
-![App](appPicture.jpg)
+![App](public/appPicture.JPG)
