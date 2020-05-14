@@ -1,53 +1,36 @@
-# Unit 19 React Homework: Employee Directory
+# Employee Directory ![badge](https://img.shields.io/badge/EmployeeDirectory-V1.00-brightgreen)
+    
+#### [Description](#Description)
+#### [Technologies](#Technologies)     
+#### [Installation](#Installation)    
+#### [Contributing](#Contributing)    
 
-## Overview
+# Description
+	The app allows you to search by first name from the data base and is updated as soon as you type the letters in the search bar, so you don't have to type a full name to get the result.
+	The app allows you to arrange your first names in order a-z or z-a by clicking on the first names button.
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+# Technologies:
 
-## User Story
+	React library based application.
+	API for sample database:
+		https://randomuser.me
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+	dependencies:
+		jest-dom": "^4.2.4
+		testing-library/react": "^9.5.0
+		testing-library/user-event": "^7.2.1
+		axios": "^0.19.2
+		react": "^16.13.1
+		react-dom": "^16.13.1
+		react-scripts": "3.4.1
 
-## Business Context
-
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
-
-## Acceptance Criteria
-
-Given a table of random users, when the user loads the page, a table of employees should render. 
-
-The user should be able to:
-
-  * Sort the table by at least one category
-
-  * Filter the users by at least one property.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
+# Installation
+   	The application is deployed at https://employee-filter.herokuapp.com It uses an Express Server running in NodeJS and Sequelize ORM/MySql Database.
+	For local use, install the dependencies lib ($ npm install) and start the server ($ npm start)
 
 
-## Submission on BCS
 
-You are required to submit the following:
 
-* the URL to the deployed application
 
-* the URL to the Github repository
-
+-------------------------------------------
+![App](public/appPicture.jpg)

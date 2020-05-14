@@ -7,6 +7,5 @@ function App() {
     <Body />
   );
 }
-
 export default App;
 

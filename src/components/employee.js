@@ -1,8 +1,6 @@
     import React from 'react';
     import "./employee.css"
     
-// key {emp.login.uuid}
-    
     function Employee(props) {
         return (
           <li className="employee-card" >
@@ -19,5 +17,4 @@
             </li>
         );
     }
-    
     export default Employee;
