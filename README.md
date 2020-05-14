@@ -30,7 +30,4 @@
 
 
 
-
-
--------------------------------------------
-![App](public/appPicture.jpg)
+![App](appPicture.jpg)
